@@ -63,14 +63,18 @@
         button:hover {
             background-color: #3367d6;
         }
-        a.back {
-            display: inline-block;
-            margin-top: 14px;
-            text-decoration: none;
-            color: #666;
-            font-size: 13px;
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
         }
-        a.back:hover {
+        a {
+            text-decoration: none;
+            color: #4285f4;
+            font-size: 14px;
+        }
+        a:hover {
             text-decoration: underline;
         }
     </style>
@@ -108,7 +112,10 @@
         <button type="submit">Analyze Answer</button>
     </form>
 
-    <a href="home.jsp" class="back">Back to Home</a>
+    <div class="nav">
+        <a href="home.jsp">← Back to Home</a>
+        <a href="history">View History →</a>
+    </div>
 </div>
 </body>
 </html>

@@ -140,12 +140,12 @@
         </table>
 
         <div class="actions">
-            <button type="submit">Delete selected</button>
-            <div class="links">
-                <a href="reading.jsp">Back to Reading</a>
-                <a href="home.jsp">Back to Home</a>
-            </div>
-        </div>
+		    <button type="submit">Delete selected</button>
+		    <div class="links">
+		        <a href="reading.jsp">← Go to Reading</a>
+		        <a href="home.jsp">Back to Home</a>
+		    </div>
+		</div>
     </form>
 </div>
 </body>
