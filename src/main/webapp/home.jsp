@@ -3,6 +3,10 @@
 <%@ page import="com.readingmcqassistant.model.User" %>
 <%
     User user = (User) session.getAttribute("user");
+    if (user == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
 %>
 <!DOCTYPE html>
 <html>
