@@ -16,28 +16,31 @@ public class AuthFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
-        String uri = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        String path = request.getRequestURI().substring(contextPath.length());
+
         HttpSession session = request.getSession(false);
         boolean loggedIn = (session != null && session.getAttribute("user") != null);
 
-        boolean isAuthRequest =
-                uri.endsWith("login.jsp") ||
-                uri.endsWith("register.jsp") ||
-                uri.endsWith("login") ||
-                uri.endsWith("register") ||
-                uri.contains("css") ||
-                uri.contains("js") ||
-                uri.contains("images");
+        boolean isPublicPath =
+                path.equals("/") ||
+                path.equals("/login.jsp") ||
+                path.equals("/register.jsp") ||
+                path.equals("/login") ||
+                path.equals("/register") ||
+                path.startsWith("/css/") ||
+                path.startsWith("/js/") ||
+                path.startsWith("/images/");
 
         if (loggedIn) {
             response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
             response.setHeader("Pragma", "no-cache");
             response.setDateHeader("Expires", 0);
             chain.doFilter(req, res);
-        } else if (isAuthRequest) {
+        } else if (isPublicPath) {
             chain.doFilter(req, res);
         } else {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect(contextPath + "/login.jsp");
         }
     }
 }
