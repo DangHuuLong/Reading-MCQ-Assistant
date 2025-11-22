@@ -1,4 +1,4 @@
-package com.readingmcqassistant.model;
+package com.readingmcqassistant.bean;
 
 public class User {
     private int id;

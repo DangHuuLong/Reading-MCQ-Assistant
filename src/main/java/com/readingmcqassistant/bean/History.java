@@ -1,4 +1,4 @@
-package com.readingmcqassistant.model;
+package com.readingmcqassistant.bean;
 
 import java.sql.Timestamp;
 

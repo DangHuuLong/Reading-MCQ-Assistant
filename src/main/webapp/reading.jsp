@@ -81,41 +81,31 @@
 </head>
 <body>
 <div class="container">
-    <h2>Reading MCQ</h2>
+  <h2>Reading MCQ</h2>
 
-    <form action="reading" method="post">
-        <label>Passage</label>
-        <textarea name="passage" required></textarea>
+  <form action="${pageContext.request.contextPath}/reading" method="post" accept-charset="UTF-8">
 
-        <label>Question</label>
-        <input type="text" name="question" required>
+    <!-- <input type="hidden" name="_csrf" value="${sessionScope.csrfToken}"> -->
+    <label>Passage</label>
+    <textarea name="passage" required maxlength="20000"></textarea>
 
-        <div class="options">
-            <div>
-                <label>Option A</label>
-                <input type="text" name="optionA" required>
-            </div>
-            <div>
-                <label>Option B</label>
-                <input type="text" name="optionB" required>
-            </div>
-            <div>
-                <label>Option C</label>
-                <input type="text" name="optionC" required>
-            </div>
-            <div>
-                <label>Option D</label>
-                <input type="text" name="optionD" required>
-            </div>
-        </div>
+    <label>Question</label>
+    <input type="text" name="question" required maxlength="1000">
 
-        <button type="submit">Analyze Answer</button>
-    </form>
-
-    <div class="nav">
-        <a href="home.jsp">← Back to Home</a>
-        <a href="history">View History →</a>
+    <div class="options">
+      <div><label>Option A</label><input type="text" name="optionA" required maxlength="500"></div>
+      <div><label>Option B</label><input type="text" name="optionB" required maxlength="500"></div>
+      <div><label>Option C</label><input type="text" name="optionC" required maxlength="500"></div>
+      <div><label>Option D</label><input type="text" name="optionD" required maxlength="500"></div>
     </div>
+
+    <button type="submit">Analyze Answer</button>
+  </form>
+
+  <div class="nav">
+    <a  href="${pageContext.request.contextPath}/home.jsp">← Back to Home</a>
+    <a  href="${pageContext.request.contextPath}/history">View History →</a>
+  </div>
 </div>
 </body>
 </html>

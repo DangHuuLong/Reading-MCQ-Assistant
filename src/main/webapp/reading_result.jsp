@@ -56,13 +56,13 @@
 </head>
 <body>
 <div class="container">
-    <h2>Result</h2>
-    <div class="answer">
-        Correct Answer:
-        <span>${correctAnswer}</span>
-    </div>
-    <a href="reading.jsp">New Question</a>
-    <a href="history" class="secondary">View History</a>
+  <h2>Result</h2>
+  <div class="answer">
+    Correct Answer:
+    <span>${param.answer}</span>
+  </div>
+  <a href="${pageContext.request.contextPath}/reading.jsp">New Question</a>
+  <a href="${pageContext.request.contextPath}/history" class="secondary">View History</a>
 </div>
 </body>
 </html>

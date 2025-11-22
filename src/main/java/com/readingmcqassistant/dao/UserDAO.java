@@ -1,6 +1,6 @@
 package com.readingmcqassistant.dao;
 
-import com.readingmcqassistant.model.User;
+import com.readingmcqassistant.bean.User;
 import com.readingmcqassistant.utils.DBConnection;
 
 import java.sql.*;
@@ -17,6 +17,7 @@ public class UserDAO {
             return rows > 0;
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("SQL Error: " + e.getMessage());
             return false;
         }
     }
@@ -33,6 +34,7 @@ public class UserDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("SQL Error: " + e.getMessage());
         }
         return null;
     }

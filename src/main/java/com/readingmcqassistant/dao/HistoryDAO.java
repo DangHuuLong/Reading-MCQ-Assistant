@@ -1,6 +1,6 @@
 package com.readingmcqassistant.dao;
 
-import com.readingmcqassistant.model.History;
+import com.readingmcqassistant.bean.History;
 import com.readingmcqassistant.utils.DBConnection;
 
 import java.sql.*;
@@ -9,7 +9,11 @@ import java.util.*;
 public class HistoryDAO {
 
     public void addHistory(History h) {
-        String sql = "INSERT INTO histories (user_id, passage, question, optionA, optionB, optionC, optionD, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    	String sql = """
+    			  INSERT INTO histories
+    			  (user_id, passage, question, option_a, option_b, option_c, option_d, answer_letter)
+    			  VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    			""";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, h.getUserId());
@@ -39,11 +43,11 @@ public class HistoryDAO {
                 h.setUserId(rs.getInt("user_id"));
                 h.setPassage(rs.getString("passage"));
                 h.setQuestion(rs.getString("question"));
-                h.setOptionA(rs.getString("optionA"));
-                h.setOptionB(rs.getString("optionB"));
-                h.setOptionC(rs.getString("optionC"));
-                h.setOptionD(rs.getString("optionD"));
-                h.setCorrectAnswer(rs.getString("correct_answer"));
+                h.setOptionA(rs.getString("option_a"));
+                h.setOptionB(rs.getString("option_b"));
+                h.setOptionC(rs.getString("option_c"));
+                h.setOptionD(rs.getString("option_d"));
+                h.setCorrectAnswer(rs.getString("answer_letter"));
                 h.setCreatedAt(rs.getTimestamp("created_at"));
                 list.add(h);
             }
@@ -77,4 +81,16 @@ public class HistoryDAO {
             e.printStackTrace();
         }
     }
+    public String findAnswerLetter(long historyId) {
+    	  String sql = "SELECT answer_letter FROM histories WHERE id = ?";
+    	  try (Connection c = DBConnection.getConnection();
+    	       PreparedStatement ps = c.prepareStatement(sql)) {
+    	    ps.setLong(1, historyId);
+    	    try (ResultSet rs = ps.executeQuery()) {
+    	      if (rs.next()) return rs.getString(1);
+    	    }
+    	  } catch (SQLException e) { e.printStackTrace(); }
+    	  return null;
+    	}
+
 }
