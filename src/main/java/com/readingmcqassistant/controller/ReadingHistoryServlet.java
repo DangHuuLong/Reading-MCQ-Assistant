@@ -1,8 +1,8 @@
 package com.readingmcqassistant.controller;
 
-import com.readingmcqassistant.dao.HistoryDAO;
-import com.readingmcqassistant.bean.History;
-import com.readingmcqassistant.bean.User;
+import com.readingmcqassistant.model.dao.HistoryDAO;
+import com.readingmcqassistant.model.bean.History;
+import com.readingmcqassistant.model.bean.User;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

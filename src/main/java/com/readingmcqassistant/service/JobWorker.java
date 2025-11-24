@@ -1,6 +1,6 @@
 package com.readingmcqassistant.service;
 
-import com.readingmcqassistant.utils.DBConnection;
+import com.readingmcqassistant.model.dao.DBConnection;
 
 import java.sql.*;
 

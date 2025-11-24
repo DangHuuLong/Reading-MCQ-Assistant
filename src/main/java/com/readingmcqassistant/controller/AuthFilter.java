@@ -1,4 +1,4 @@
-package com.readingmcqassistant.filter;
+package com.readingmcqassistant.controller;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;

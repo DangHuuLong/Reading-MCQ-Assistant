@@ -1,6 +1,5 @@
-package com.readingmcqassistant.dao;
+package com.readingmcqassistant.model.dao;
 
-import com.readingmcqassistant.utils.DBConnection;
 import java.sql.*;
 
 public class JobDao {

@@ -1,7 +1,6 @@
-package com.readingmcqassistant.dao;
+package com.readingmcqassistant.model.dao;
 
-import com.readingmcqassistant.bean.History;
-import com.readingmcqassistant.utils.DBConnection;
+import com.readingmcqassistant.model.bean.History;
 
 import java.sql.*;
 import java.util.*;

@@ -1,7 +1,7 @@
 package com.readingmcqassistant.controller;
 
-import com.readingmcqassistant.bo.ReadingStatusBO;
-import com.readingmcqassistant.bean.User;
+import com.readingmcqassistant.model.bo.ReadingStatusBO;
+import com.readingmcqassistant.model.bean.User;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;

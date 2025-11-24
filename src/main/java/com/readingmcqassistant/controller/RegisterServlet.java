@@ -1,7 +1,7 @@
 package com.readingmcqassistant.controller;
 
-import com.readingmcqassistant.dao.UserDAO;
-import com.readingmcqassistant.bean.User;
+import com.readingmcqassistant.model.dao.UserDAO;
+import com.readingmcqassistant.model.bean.User;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

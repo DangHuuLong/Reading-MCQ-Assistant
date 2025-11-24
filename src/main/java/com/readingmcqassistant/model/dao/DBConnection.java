@@ -1,4 +1,4 @@
-package com.readingmcqassistant.utils;
+package com.readingmcqassistant.model.dao;
 
 import java.sql.*;
 

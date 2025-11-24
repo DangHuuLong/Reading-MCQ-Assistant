@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import="java.util.*,com.readingmcqassistant.bean.History"%>
+    import="java.util.*,com.readingmcqassistant.model.bean.History"%>
 <%
     List<History> histories = (List<History>) request.getAttribute("histories");
 %>

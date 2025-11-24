@@ -1,6 +1,6 @@
-package com.readingmcqassistant.bo;
+package com.readingmcqassistant.model.bo;
 
-import com.readingmcqassistant.dao.JobDao;
+import com.readingmcqassistant.model.dao.JobDao;
 
 public class ReadingBO {
 

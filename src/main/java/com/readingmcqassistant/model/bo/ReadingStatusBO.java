@@ -1,7 +1,7 @@
-package com.readingmcqassistant.bo;
+package com.readingmcqassistant.model.bo;
 
-import com.readingmcqassistant.dao.JobDao;
-import com.readingmcqassistant.dao.HistoryDAO;
+import com.readingmcqassistant.model.dao.JobDao;
+import com.readingmcqassistant.model.dao.HistoryDAO;
 
 public class ReadingStatusBO {
 
